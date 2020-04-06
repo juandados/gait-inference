@@ -3,3 +3,6 @@ code/__pycache__/
 darkflow/
 # Deleting temp files
 data_rf/images/
+code/logs/
+code/checkpoints/
+code/figs/
