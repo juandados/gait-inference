@@ -1,0 +1,14 @@
+jupyter
+tensorflow-gpu==1.15.0
+scipy
+scikit-learn
+pillow
+h5py
+matplotlib
+keras==2.2.4
+pandas
+seaborn==0.9.1
+pydot
+pytube3==9.5.4
+opencv-python
+cython
