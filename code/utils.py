@@ -259,26 +259,18 @@ class FrameExtractor():
         
         cutting_details = []
         for frame_counter in frame_counters:
-            try:
-                self.vid_cap.set(cv2.CAP_PROP_POS_FRAMES, frame_counter)
-                ret, image = self.vid_cap.read()
-                X, width_scale, height_scale, cutting_rect = self.yolo_detector.extract_person(imgcv=image)
-                img_path = os.path.join(dest_path, ''.join([img_name, '_', str(frame_counter), img_ext]))
-                cv2.imwrite(img_path, img_to_array(X))
-                video_name = os.path.basename(self.video_path)
-                cutting_details.append({"video_name":video_name,
-                                        "frame":frame_counter,
-                                        "width_scale": width_scale, 
-                                        "height_scale": height_scale, 
-                                        "cutting_rect": cutting_rect})
-            except:
-                print('Not person detected, video path: {}, frame: {}'.format(self.video_path, frame_counter))
-                cutting_details.append({"video_name":video_name,
-                        "frame":frame_counter,
-                        "width_scale": None, 
-                        "height_scale": None, 
-                        "cutting_rect": None})
-                
+            print('Extracting frame {} on {}'.format(frame_counter, self.video_path))
+            self.vid_cap.set(cv2.CAP_PROP_POS_FRAMES, frame_counter)
+            ret, image = self.vid_cap.read()
+            X, width_scale, height_scale, cutting_rect = self.yolo_detector.extract_person(imgcv=image)
+            img_path = os.path.join(dest_path, ''.join([img_name, '_', str(frame_counter), img_ext]))
+            cv2.imwrite(img_path, img_to_array(X))
+            video_name = os.path.basename(self.video_path)
+            cutting_details.append({"video_name":video_name,
+                                    "frame":frame_counter,
+                                    "width_scale": width_scale, 
+                                    "height_scale": height_scale, 
+                                    "cutting_rect": cutting_rect})
         return cutting_details
 
 class PoseIterator(Iterator):
