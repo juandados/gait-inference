@@ -1,3 +1,5 @@
 code/__pycache__/
 *.ipynb_checkpoints/
 darkflow/
+# Deleting temp files
+data_rf/images/
