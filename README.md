@@ -1,4 +1,5 @@
 # Intro
+![](pose_estimation_animation.gif)
 ## Citation
 ```
 @article{juandados2020gait-inference,
