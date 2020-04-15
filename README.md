@@ -1,5 +1,8 @@
 # Intro
+This work provides a simple methodology for gait prediction based on computer vision that can be used to assist the design process of lower limb active prosthesis. Our proposal uses YOLOv2 for person detection, a human pose estimator build from ResNet-50 and a long-short term memory recurrent network as prediction model. With a mean absolute error that does not exceeds the 12 degrees on each predicted joint angle in the trans-femoral amputation case, it has a modest performance with margin for improvements.
+
 ![](pose_estimation_animation.gif)
+
 ## Citation
 ```
 @article{juandados2020gait-inference,
