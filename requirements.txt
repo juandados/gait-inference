@@ -1,5 +1,5 @@
 jupyter
-tensorflow-gpu==1.15.0
+tensorflow-gpu==2.5.1
 scipy
 scikit-learn
 pillow
